@@ -4,3 +4,8 @@
 https://hamlab.net/mcu/raspbery_pi_pico_rp2040.html
 
 https://blog.naver.com/PostList.naver?blogId=chcbaram&from=postList&categoryNo=27
+
+
+
+cmake -G "Ninja" -DCMAKE_BUILD_TYPE=Debug -S ../pico-examples -B build
+
