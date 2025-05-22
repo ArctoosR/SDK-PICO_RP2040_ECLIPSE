@@ -11,9 +11,13 @@ cmake -G "Ninja" -DCMAKE_BUILD_TYPE=Debug -S ../pico-examples -B build
 
 //*******************************************************************************************
 1:
+
 git clone https://github.com/raspberrypi/pico-sdk.git
+
 cd pico-sdk
+
 git submodule update --init
+
 
 در پوشه پروژه 
 2:
