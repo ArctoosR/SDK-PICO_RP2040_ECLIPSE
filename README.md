@@ -36,7 +36,10 @@ cmake -G "Ninja" -DCMAKE_BUILD_TYPE=Debug -DPICO_SDK_PATH=./pico-sdk -S . -B bui
 4:
 ساخت و اجرای پروژه
 cmake --build build
+
+
  5:
+ 
  my_pico_project/  
 │── CMakeLists.txt      ← این فایل را اینجا قرار دهید  
 │── pico-sdk/           ← مسیر Pico SDK  
