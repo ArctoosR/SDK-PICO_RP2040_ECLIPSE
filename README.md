@@ -19,15 +19,24 @@ git submodule update --init
 2:
 ساخت فایل CmakeLists.txt  در پوشه اصلی
 cmake_minimum_required(VERSION 3.13)
+
 include(${PICO_SDK_PATH}/external/pico_sdk_import.cmake)
 
+
 #include(pico_sdk_import.cmake)
+
 project(Test_Ninja_Sample)
+
 pico_sdk_init()
+
 add_executable(Test_Ninja_Sample src/main.c)
+
 target_link_libraries(Test_Ninja_Sample pico_stdlib)
+
 pico_add_extra_outputs(Test_Ninja_Sample)
+
 set(CMAKE_ASM_COMPILER "C:/ToolChain_Arm/12.3 rel1/bin/arm-none-eabi-gcc.exe")
+
 
 3:
 
