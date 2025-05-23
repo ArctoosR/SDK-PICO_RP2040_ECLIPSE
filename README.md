@@ -51,6 +51,12 @@ cmake -G "Ninja" -DCMAKE_BUILD_TYPE=Debug -DPICO_SDK_PATH=./pico-sdk -S . -B bui
 cmake --build build
 
 
+
+ninja -C build
+
+
+
+
  5:
  
  my_pico_project/  
