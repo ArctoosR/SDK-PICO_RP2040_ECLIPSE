@@ -256,4 +256,29 @@ Hopefully, this has helped you get started with some advanced tools for programm
 Happy hacking!
 
 
+//################################################################################################
+//################################################################################################
+                             UPDATE [MSYS]
+
+                             pacman -Syuu
+                             
+export PATH="/mingw64/bin:$PATH"
+
+pacman -Syuu
+
+pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-make mingw-w64-x86_64-binutils
+
+export PATH="/mingw64/bin:$PATH"
+
+
+۳. تست کامپایل و اجرای bootstrap بدون مشکل
+
+bash
+gcc test.c -o test
+./bootstrap
+
+
+//#####################################################################################################
+//####################################################################################################
+
 
