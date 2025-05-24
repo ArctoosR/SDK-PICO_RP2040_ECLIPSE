@@ -65,3 +65,20 @@ ninja -C build
 │── src/                ← فایل‌های سورس پروژه  
 │   ├── main.c          ← فایل اصلی برنامه  
 │── build/              ← مسیر پیشنهادی برای خروجی‌های ساخت  
+
+
+//****************************************************************************************
+
+Install Git for Windows SDK
+Git for Windows SDK is different than Git for Windows, as the former contains a number of tools that help us build programs on Windows (including a package manager). Regular Git Bash does not have these features.
+
+Head to https://gitforwindows.org/#download-sdk and download Git for Windows SDK. Download the latest installer for your version of Windows (likely the 64-bit version).
+
+Run the installer, accepting all the defaults. This will open a command prompt window and begin to download/install Git for Windows SDK. It will take some time, as it’s a rather large set of files.
+
+1: Download [https://gitforwindows.org/#download-sdk]
+
+
+2:
+
+
