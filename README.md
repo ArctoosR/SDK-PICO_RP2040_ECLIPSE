@@ -114,9 +114,10 @@ Enter the following commands to install libusb-1.0.23:
 cd ~/Downloads
 
 wget http://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-libusb-1.0.23-1-any.pkg.tar.xz
+edit:[wget http://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-libusb-1.0.26-1-any.pkg.tar.zst]
 
 pacman -U mingw-w64-x86_64-libusb-1.0.23-1-any.pkg.tar.xz
-
+edit:[pacman -U mingw-w64-x86_64-libusb-1.0.26-1-any.pkg.tar.zst]
 Enter Y when asked “Proceed with installation? [Y/n].”
 
 4:
