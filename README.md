@@ -90,9 +90,13 @@ Run C:\git-sdk-64\git-bash.exe. Note that you must use this executable to run Gi
 In the terminal, enter the following commands:
 
 pacman -Syu 
+
 pacman -Su
+
 pacman -S mingw-w64-x86_64-toolchain git make libtool pkg-config autoconf automake texinfo wget
+
 When pacman asks which members to install in the mingw-w64-x86_64-toolchain, press ‘enter’ to install all.
+
 
 3:
 
@@ -108,8 +112,11 @@ Note: there is an issue with libusb-1.0.24 on MSYS2. We will manually install v1
 Enter the following commands to install libusb-1.0.23:
 
 cd ~/Downloads
+
 wget http://repo.msys2.org/mingw/x86_64/mingw-w64-x86_64-libusb-1.0.23-1-any.pkg.tar.xz
+
 pacman -U mingw-w64-x86_64-libusb-1.0.23-1-any.pkg.tar.xz
+
 Enter Y when asked “Proceed with installation? [Y/n].”
 
 4:
@@ -122,19 +129,27 @@ OpenOCD (Open On-Chip Debugger) is an open-source tool that communicates with GD
 In your Git for Windows SDK terminal, enter the following commands:
 
 cd /c/VSARM/sdk/pico
+
 git clone https://github.com/raspberrypi/openocd.git --branch picoprobe --depth=1 
+
 cd openocd
+
 ./bootstrap
+
 ./configure --enable-picoprobe --disable-werror
+
 make
+
 When OpenOCD is done building, you will need to copy in the libusb-1.0.dll library file from your Git for Windows SDK directory. This .dll file must be in the same directory as your openocd.exe file for the tool to work. If you move openocd.exe, you’ll need to copy libusb-1.0.dll to the same folder.
 
 Enter the following command to copy the file into the current directory:
 
 cp /c/git-sdk-64/mingw64/bin/libusb-1.0.dll src/libusb-1.0.dll
+
 You can test running OpenOCD with the following command:
 
 src/openocd.exe
+
 You should expect it to throw some errors and exit, as we haven’t given it any parameters.
 
 5:
@@ -152,21 +167,29 @@ Open C:\git-sdk-64\git-bash.exe (if it’s not already open).
 Run the following commands to clone the picotool repository and build it:
 
 cd /c/VSARM/sdk/pico
+
 git clone -b master https://github.com/raspberrypi/picotool.git 
+
 cd picotool
+
 mkdir build
+
 cd build
+
 cmake -G "MinGW Makefiles" -DPC_LIBUSB_INCLUDEDIR="/c/git-sdk-64/mingw64/include/libusb-1.0" ..
 make
 Just like with OpenOCD, we’ll need a copy of libusb-1.0.dll to be in the same folder as picotool.exe. Enter the following command to copy it into the build folder:
 
 cp /c/git-sdk-64/mingw64/bin/libusb-1.0.dll .
+
 We also need a copy of libgcc_s_seh-1.dll:
 
 cp /c/git-sdk-64/mingw64/bin/libgcc_s_seh-1.dll .
+
 You can test picotool by entering the following:
 
 ./picotool.exe
+
 It should spit out a help message and exit.
 
 6:
@@ -217,6 +240,7 @@ Test Picotool
 With your Pico in bootloader mode, enter the following command:
 
 /c/VSARM/sdk/pico/picotool/build/picotool.exe info
+
 Note that you can run picotool without specifying the path name if you added its location to your Path.
 
 If it is able to communicate with your connected Pico, you should see that printed.
