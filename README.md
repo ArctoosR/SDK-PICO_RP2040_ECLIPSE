@@ -314,6 +314,38 @@ DebugProbe_RP2040
 https://mcuoneclipse.com/2022/09/17/picoprobe-using-the-raspberry-pi-pico-as-debug-probe/
 
 //*******************************************************
+
+
+INSTALL Debugprobe :
+
+git clone https://github.com/raspberrypi/debugprobe
+cd debugprobe
+
+
+ git submodule update --init --recursive
+
+ pacman -Qs make
+
+pacman -S mingw-w64-x86_64-make
+
+which make
+
+export PATH=$PATH:/mingw64/bin
+
+ cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -DPICO_SDK_PATH=/c/Pico_Sdk/pico-sdk -S . -B build
+
+ cd build
+ 
+ make
+
+ ["
+ [ 97%] Building C object CMakeFiles/debugprobe.dir/C_/Pico_Sdk/pico-sdk/src/rp2_common/hardware_exce
+ption/exception.c.obj
+[ 98%] Building C object CMakeFiles/debugprobe.dir/freertos/portable/MemMang/heap_1.c.obj
+[100%] Linking CXX executable debugprobe.elf
+[100%] Built target debugprobe
+"]
+
 //********************************************************
 مشکل شناسایی در debugprobe در  usb :
 📌 برای جایگزین کردن oemXX.inf، ابتدا باید شناسه صحیح درایور را پیدا کنیم! 🚀
