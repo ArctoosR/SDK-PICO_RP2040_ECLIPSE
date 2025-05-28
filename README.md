@@ -43,6 +43,32 @@ set(CMAKE_ASM_COMPILER "C:/ToolChain_Arm/12.3 rel1/bin/arm-none-eabi-gcc.exe")
 
 
 3:
+Option[MSYS]:
+pacman -Qs arm-none-eabi-gcc
+
+pacman -S mingw-w64-x86_64-arm-none-eabi-gcc
+
+export PICO_TOOLCHAIN_PATH=/c/msys64/mingw64/bin
+
+pacman -Qs ninja
+
+pacman -S mingw-w64-x86_64-ninja
+
+export CMAKE_MAKE_PROGRAM=/c/msys64/mingw64/bin/ninja
+
+
+python3 --version
+
+pacman -S mingw-w64-x86_64-python
+
+
+python3 -m ensurepip
+
+
+python3 -m pip install --upgrade pip
+python3 -m pip install setuptools
+
+
 
 cmake -G "Ninja" -DCMAKE_BUILD_TYPE=Debug -DPICO_SDK_PATH=./pico-sdk -S . -B build
 
